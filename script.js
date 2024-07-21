@@ -50,3 +50,28 @@ function compute(operand) {
     }
     currDisplay.innerText = result
 }
+
+numbers.forEach((number) => {
+    number.addEventListener("click", () => {
+        appendNumber(number.innerText);
+    });
+});
+
+operands.forEach((operand) => {
+    operand.addEventListener("click", () => {
+        chooseOperation(operand.innerText);
+    });
+});
+
+clearBtn.addEventListener("click", () => {
+    clearDisplay();
+});
+
+equalBtn.addEventListener("click", () => {
+    compute();
+    prevDisplay.innerText = "";
+});
+
+delBtn.addEventListener("click", () => {
+    currDisplay.innerText = currDisplay.innerText.slice(0, -1);
+});
