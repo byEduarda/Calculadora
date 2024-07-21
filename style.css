@@ -27,10 +27,10 @@
 }
 
 .span-2 {
-    grid-column: span ;
+    grid-column: span 2;
 }
 
-.calculadora > output {
+.calculadora > .output {
     font-size: 2rem;
     background-color: inherit;
     color: white;
