@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.calculadora button :hover {
+.calculadora button:hover {
     background-color: hsl(230, 6%, 30%);
 }
 

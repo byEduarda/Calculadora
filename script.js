@@ -2,8 +2,8 @@ const currDisplay = document.querySelector(".curr-display")
 const prevDisplay = document.querySelector(".prev-display")
 const numbers = document.querySelector(".number")
 const operands = document.querySelector(".operation")
-const clearBtn = document.querySelector(".clear")
-const delBtn = document.querySelector(".delete")
+const clearBtn = document.querySelector(".span-2 clear")
+const delBtn = document.querySelector(".span-2 delete")
 const equalBtn = document.querySelector(".equal")
 let operation;
 
