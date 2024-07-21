@@ -10,3 +10,17 @@ let operation;
 function appendNumber(number) {
     if (number == "." && currDisplay.innerHTML.includes(".")) return; currDisplay.innerHTML += number;
 }
+
+function chooseOperation(operand) {
+    if (currDisplay.innerHTML == "") return;
+    compute(operand);
+    operation = operand;
+    currDisplay.innerText += operand;
+    prevDisplay.innerText = currDisplay.innerText;
+    currDisplay.innerText = "";
+}
+
+function clearDisplay() {
+    currDisplay.innerText = "";
+    prevDisplay.innerText = "";
+}
