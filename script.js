@@ -5,3 +5,8 @@ const operands = document.querySelector(".operation")
 const clearBtn = document.querySelector(".clear")
 const delBtn = document.querySelector(".delete")
 const equalBtn = document.querySelector(".equal")
+let operation;
+
+function appendNumber(number) {
+    if (number == "." && currDisplay.innerHTML.includes(".")) return; currDisplay.innerHTML += number;
+}
