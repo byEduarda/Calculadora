@@ -5,23 +5,22 @@ const operands = document.querySelectorAll(".operation")
 const clearBtn = document.querySelector(".clear")
 const delBtn = document.querySelector(".delete")
 const equalBtn = document.querySelector(".equal")
-let operation = null;
+let operation;
 
 function appendNumber(number) {
-    if (number === "." && currDisplay.innerHTML.includes(".")) return;
+    if (number === "." && currDisplay.innerText.includes(".")) return;
     currDisplay.innerText += number;
 }
 
 function chooseOperation(operand) {
-    if (currDisplay.innerHTML === "") return;
-    if (prevDisplay.innerHTML !== "") {
-        compute(operand);
-    }
-    
+    if (currDisplay.innerText === "") return;
+    compute(operand)
     operation = operand;
-    currDisplay.innerHTML += operand;
-    prevDisplay.innerHTML = currDisplay.innerText + operand;
-    currDisplay.innerHTML = "";
+    currDisplay.innerText += operand
+    prevDisplay.innerText = currDisplay.innerText;
+    currDisplay.innerText = '';
+
+    
 }
 
 function clearDisplay() {
@@ -32,8 +31,8 @@ function clearDisplay() {
 
 function compute(operand) {
     let result;
-    const previousValue = parseFloat(prevDisplay.innerHTML);
-    const currentValue = parseFloat(currDisplay.innerHTML);
+    const previousValue = parseFloat(prevDisplay.innerText);
+    const currentValue = parseFloat(currDisplay.innerText);
 
     if (isNaN(previousValue) || isNaN(currentValue)) return;
     
@@ -53,18 +52,18 @@ function compute(operand) {
         default:
             return;
     }
-    currDisplay.innerHTML = result;
+    currDisplay.innerText = result;
 }
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
-        appendNumber(number.innerHTML);
+        appendNumber(number.innerText);
     });
 });
 
 operands.forEach((operand) => {
     operand.addEventListener("click", () => {
-        chooseOperation(operand.innerHTML);
+        chooseOperation(operand.innerText);
     });
 });
 
@@ -78,5 +77,5 @@ equalBtn.addEventListener("click", () => {
 });
 
 delBtn.addEventListener("click", () => {
-    currDisplay.innerHTML = currDisplay.innerHTML.slice(0, -1);
+    currDisplay.innerText = currDisplay.innerText.slice(0, -1);
 });
